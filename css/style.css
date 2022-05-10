@@ -1,0 +1,226 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eee;
+  height: 100vh;
+}
+
+.container {
+  padding: 0% 15px;
+  margin: 0% auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(160px);
+  -webkit-transform: translateY(160px);
+  -moz-transform: translateY(160px);
+  -ms-transform: translateY(160px);
+  -o-transform: translateY(160px);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+  }
+  .container .naruto {
+    margin-bottom: 15px;
+  }
+  .container .sasuke {
+    margin-bottom: 30px;
+  }
+  .new-game {
+    top: 6% !important;
+  }
+}
+
+.new-game {
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  padding: 15px;
+  border: none;
+  background-color: #11516f;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.container .naruto,
+.container .sasuke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 48%;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 6px #00000026;
+}
+
+.container .naruto .naruto-health,
+.container .sasuke .sasuke-health {
+  position: relative;
+  width: 90%;
+  height: 18px;
+  background-color: #eeeeee;
+  margin: 10px 0px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.container .naruto .naruto-health > span,
+.container .sasuke .sasuke-health > span {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: #3ac03a;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: all 0.6s linear;
+  -webkit-transition: all 0.6s linear;
+  -moz-transition: all 0.6s linear;
+  -ms-transition: all 0.6s linear;
+  -o-transition: all 0.6s linear;
+}
+
+.container .naruto.yellow .naruto-health > span,
+.container .sasuke.yellow .sasuke-health > span {
+  background-color: yellow;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  -o-transition: all 0.6s;
+}
+
+.container .naruto.red .naruto-health > span,
+.container .sasuke.red .sasuke-health > span {
+  background-color: red;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  -o-transition: all 0.6s;
+}
+
+.container .naruto h2,
+.container .sasuke h2 {
+  margin-bottom: 10px;
+}
+
+.container .naruto .image {
+  text-align: center;
+  width: 300px;
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.container .naruto .image img {
+  max-width: 90%;
+  height: 180px;
+}
+
+.container .naruto .buttons-container,
+.container .sasuke .buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+}
+
+.container .naruto .buttons-container > button,
+.container .sasuke .buttons-container > button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.container .naruto .buttons-container > button:first-child,
+.container .sasuke .buttons-container > button:first-child {
+  background-color: red;
+}
+
+.container .naruto .buttons-container .naruto-attack.end,
+.container .naruto .buttons-container .naruto-rehealth.end {
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
+.container .sasuke .buttons-container > .sasuke-attack.end,
+.container .sasuke .buttons-container > .sasuke-rehealth.end {
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
+.container .naruto .buttons-container > button:last-child,
+.container .sasuke .buttons-container > button:last-child {
+  background-color: #3ac03a;
+}
+
+/* sasuke */
+.container .sasuke .image {
+  text-align: center;
+  width: 300px;
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.container .sasuke .image img {
+  max-width: 100%;
+  max-height: 180px;
+}
